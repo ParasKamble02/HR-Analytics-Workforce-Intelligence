@@ -14,7 +14,7 @@ def corr_label(r):
     """Turn a correlation number into plain words."""
     if r is None:
         return "N/A", "Not enough data"
-    
+
     a = abs(r)
     if a < 0.1:
         strength = "None"
@@ -26,9 +26,10 @@ def corr_label(r):
         strength = "Strong"
 
     if strength == "None":
-        return strength, f"No clear link ({r:+.2f})"
-    direction = "Higher pay with tenure" if r > 0 else "Lower pay with tenure"
-    return f"{strength} {'+' if r > 0 else '-'}", f"{direction} ({r:+.2f})"
+        return strength, "No clear link"
+    
+    direction = "Pay rises with tenure" if r > 0 else "Pay falls with tenure"
+    return f"{strength} {'+' if r > 0 else '-'}", direction
 
 
 def show_workforce(df, filtered_df):

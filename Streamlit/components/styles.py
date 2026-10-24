@@ -8,16 +8,17 @@ def load_styles():
 [data-testid="stSidebarNav"] { display: none; }
 [data-testid="stMainBlockContainer"] { padding-top: 5rem !important; }
 [data-testid="stMainBlockContainer"] h1 { padding-top: 0; margin-top: 0; }
+[data-testid="stMainBlockContainer"] h3 { font-size: 1.7rem; line-height: 1.25; }
 
 /* ---------- Cards ---------- */
 .insight-card { background: #151923; border: 1px solid #292f3d; border-radius: 16px; padding: 26px; min-height: 250px; box-sizing: border-box; }
 .insight-title { color: #aab2c5; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; }
 .insight-value { color: #ffffff; font-size: 22px; font-weight: 600; margin-bottom: 22px; }
 .insight-text { color: #aab2c5; font-size: 14px; line-height: 1.6; }
-.kpi-card { background: #151923; border: 1px solid #292f3d; border-radius: 16px; padding: 20px; }
+.kpi-card { background: #151923; border: 1px solid #292f3d; border-radius: 16px; padding: 20px; min-height: 160px; box-sizing: border-box; }
 .kpi-title { color: #aab2c5; font-size: 14px; }
 .kpi-value { color: #ffffff; font-size: 28px; font-weight: 700; }
-.kpi-subtitle { color: #8f98aa; font-size: 13px; }
+.kpi-subtitle { color: #8f98aa; font-size: 13px; line-height: 1.4; }
 .section-title { color: #ffffff; font-size: 24px; font-weight: 700; margin: 22px 0 12px 0; }
 .section-title-tight { margin-top: 0; }
 

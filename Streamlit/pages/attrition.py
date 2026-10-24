@@ -178,7 +178,7 @@ def show_attrition(df, filtered_df):
         kpi_card(
             "Since Last Promotion",
             fmt(m["avg_since_promo"], "{:.1f} yrs"),
-            "Average years without promotion"
+            "Average gap"
         )
     with p3:
         kpi_card(
@@ -204,7 +204,7 @@ def show_attrition(df, filtered_df):
             st.info("Tenure data is not available.")
 
     with col2:
-        st.markdown("### Attrition by Years Since Promotion")
+        st.markdown("### Attrition by Promotion Gap")
         fig = rate_band_chart(data, "YearsSinceLastPromotion", PROMO_BINS, PROMO_LABELS, 380)
         if fig is not None:
             st.plotly_chart(fig, width="stretch")

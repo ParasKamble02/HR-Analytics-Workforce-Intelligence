@@ -53,7 +53,7 @@ def show_dashboard(df, filtered_df):
         kpi_card(
             "Total Employees",
             f"{total_employees:,}",
-            "Employees currently tracked"
+            "Currently tracked"
         )
 
     with c2:
@@ -97,7 +97,7 @@ def show_dashboard(df, filtered_df):
     with h2:
         kpi_card("Avg. Monthly Income", fmt(m["avg_income"], "${:,.0f}"), "Per employee")
     with h3:
-        kpi_card("Overtime", fmt(m["overtime_pct"], "{:.1f}%"), "Employees working overtime")
+        kpi_card("Overtime", fmt(m["overtime_pct"], "{:.1f}%"), "Working overtime")
     with h4:
         kpi_card("Job Satisfaction", fmt(m["avg_satisfaction"], "{:.2f} / 4"), "Average rating")
 
