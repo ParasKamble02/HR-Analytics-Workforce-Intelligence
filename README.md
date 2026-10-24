@@ -1,0 +1,397 @@
+# 👥 HR Analytics & Workforce Intelligence
+
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?logo=streamlit&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-Data%20Analysis-150458?logo=pandas&logoColor=white)
+![Plotly](https://img.shields.io/badge/Plotly-Charts-3F4F75?logo=plotly&logoColor=white)
+
+> An interactive HR analytics dashboard for exploring workforce composition, employee attrition, tenure and promotion patterns, and data-driven HR insights. Filter by department and every KPI, chart, record and insight updates automatically.
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Screenshots](#screenshots)
+- [Features](#features)
+- [How the Metrics Work](#how-the-metrics-work)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Dataset](#dataset)
+- [Configuration](#configuration)
+- [Data Preparation](#data-preparation)
+- [SQL Analysis](#sql-analysis)
+- [Project Scope](#project-scope)
+- [Deployment](#deployment)
+- [Roadmap](#roadmap)
+- [Author](#author)
+- [License](#license)
+
+---
+
+## Overview
+
+**HR Analytics & Workforce Intelligence** turns employee-level HR data into an interactive analytics application. HR users can monitor workforce KPIs, compare departments and job roles, investigate why employees leave, search individual records and export the results.
+
+The project focuses on **descriptive and diagnostic HR analytics**. It does not use machine learning or make predictions about individual employees.
+
+**Questions the app helps answer**
+
+- How large is the workforce, and how many employees have left?
+- Which departments and job roles have the highest attrition?
+- How do overtime, job satisfaction, tenure and promotion gaps relate to attrition?
+- Do employees who leave earn less than those who stay?
+- Which employee records match specific HR criteria?
+- Which workforce segments deserve further investigation?
+
+---
+
+## Screenshots
+
+| Dashboard | Workforce |
+|---|---|
+| ![Dashboard](screenshots/dashboard.png) | ![Workforce](screenshots/workforce.png) |
+
+| Attrition | Employees |
+|---|---|
+| ![Attrition](screenshots/attrition.png) | ![Employees](screenshots/employees.png) |
+
+| Insights |
+|---|
+| ![Insights](screenshots/insights.png) |
+
+---
+
+## Features
+
+### 📊 Dashboard
+
+A high-level view of workforce health.
+
+- **Headline KPIs:** total employees, employees who left, attrition rate, average age
+- **Workforce Health KPIs:** average tenure, average monthly income, overtime percentage, average job satisfaction
+- **Charts:** attrition by department, attrition summary donut, attrition by job role
+- **Key Workforce Insights:** attrition overview, most represented role, average workforce age
+
+### 👥 Workforce
+
+Workforce composition and demographics.
+
+- Headcount by department and by job role
+- Age distribution, gender composition and education field
+- **Compensation & Tenure:** average income of retained employees and leavers, the leavers' pay gap, and a plain-language pay-versus-tenure indicator
+- **Income vs. Tenure** scatter plot, with retained employees and leavers shown in different colors
+
+### 📉 Attrition
+
+Why and where employees leave.
+
+- Attrition rate by department and by job role
+- Attrition vs. overtime and vs. job satisfaction
+- **Tenure & Promotion:** average tenure, years since last promotion, share of employees with stalled promotion, and attrition among them
+- Attrition by tenure band and by years since last promotion, with group sizes (`n`) shown under each bar
+
+### 🔎 Employees
+
+Employee-level exploration.
+
+- Free-text search across the records
+- Quick filters for attrition, department and job role
+- Selection summary KPIs: displayed employees, average income, average tenure, attrition rate
+- Full records table
+- **CSV export** of exactly the records currently shown
+
+```text
+Filter → Explore → Identify → Export
+```
+
+### 💡 Insights
+
+Findings and recommendations calculated from the current selection.
+
+**Key Findings (6)**
+
+1. Job role with the highest attrition rate
+2. Overtime attrition compared with non-overtime
+3. Job satisfaction and turnover
+4. Most represented job role
+5. Promotion stagnation and attrition
+6. Income of leavers vs. retained employees
+
+**Recommended Actions (6)** respond to those findings, for example *Target High-Attrition Roles*, *Reduce Overtime Pressure*, *Improve Job Satisfaction*, *Plan Around Key Roles*, *Review Promotion Paths* and *Review Compensation*.
+
+The wording adapts to the data. If overtime is not linked to higher attrition in the selection, the page says so instead of recommending action. When a group is too small to compare, the page says there is not enough data.
+
+### 🎛️ Interactive Filtering
+
+The sidebar department filter (Research & Development, Human Resources, Sales) drives every page. Changing it updates KPIs, charts, attrition calculations, employee records, insights and recommendations without touching the underlying dataset.
+
+### 🎨 User Interface
+
+- Dark analytics theme with a blue/indigo palette
+- Card-based KPI and insight layout
+- Fixed-width sidebar with navigation, filter and a pinned footer card
+- Shared chart styling across all pages
+- Consistent spacing and typography
+
+---
+
+## How the Metrics Work
+
+| Metric | Definition |
+|---|---|
+| **Attrition rate** | Employees with `Attrition = Yes` ÷ employees in the current selection × 100 |
+| **Promotion stalled** | 5 or more years since the last promotion (`STALLED_YEARS` in `utils/metrics.py`) |
+| **Low job satisfaction** | Ratings of 1–2, compared with ratings of 3–4 |
+| **Leavers' pay gap** | (Average income of leavers − average income of retained) ÷ average income of retained |
+| **Pay vs. tenure** | Correlation between monthly income and years at company, shown as *None / Weak / Moderate / Strong* with the direction |
+| **Small-group protection** | Comparisons ignore groups with fewer than 10 employees (`MIN_GROUP`), so a tiny group cannot produce a misleading percentage |
+
+**Full dataset snapshot (all departments selected)**
+
+| Total employees | Employees left | Retained | Attrition rate |
+|---|---|---|---|
+| 1,470 | 237 | 1,233 | 16.12% |
+
+> Insights and recommendations are analytical observations from the available data. Use them to guide HR investigation, not as proof of cause and effect.
+
+---
+
+## Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| **Python** | Application logic |
+| **Streamlit** | Web application and multi-page layout |
+| **pandas** | Data cleaning, transformation and analysis |
+| **NumPy** | Numerical operations |
+| **Plotly** | Interactive charts |
+| **HTML / CSS** | UI customization (cards, sidebar, theme) |
+| **SQL / MySQL** | Exploratory HR data analysis (see [SQL Analysis](#sql-analysis)) |
+| **Git & GitHub** | Version control and hosting |
+
+---
+
+## Project Structure
+
+```text
+HR-Analytics-Workforce-Intelligence/
+├── README.md
+├── .gitignore
+├── screenshots/
+├── data/
+│   └── HR-Employee-Attrition.csv
+└── Streamlit/
+    ├── .streamlit/
+    │   └── config.toml          # Theme and client settings
+    ├── assets/
+    ├── components/
+    │   ├── cards.py             # KPI and insight cards
+    │   ├── charts.py            # Shared chart style and colors
+    │   ├── hr_charts.py         # Tenure, promotion and income charts
+    │   ├── sidebar.py           # Brand, navigation, department filter
+    │   └── styles.py            # Global CSS
+    ├── pages/
+    │   ├── dashboard.py
+    │   ├── workforce.py
+    │   ├── attrition.py
+    │   ├── employees.py
+    │   └── insights.py
+    ├── utils/
+    │   ├── calculations.py
+    │   ├── data_loader.py
+    │   ├── helpers.py
+    │   └── metrics.py           # HR metric calculations
+    ├── app.py                   # Entry point and page routing
+    └── requirements.txt
+```
+
+`__pycache__` folders are generated automatically and should be excluded with `.gitignore`.
+
+---
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/<your-username>/HR-Analytics-Workforce-Intelligence.git
+cd HR-Analytics-Workforce-Intelligence
+```
+
+### 2. Create a virtual environment
+
+```bash
+python -m venv venv
+```
+
+Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+macOS / Linux:
+
+```bash
+source venv/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
+cd Streamlit
+pip install -r requirements.txt
+```
+
+`requirements.txt` contains:
+
+```text
+streamlit
+numpy
+pandas
+plotly
+```
+
+Use a recent Streamlit release. The app relies on newer APIs such as `st.html` and `width="stretch"`.
+
+### 4. Add the dataset
+
+Place the dataset in the `data/` folder, one level above the `Streamlit` folder. The app loads the first `.csv` file it finds there.
+
+### 5. Run the app
+
+From the `Streamlit` folder:
+
+```bash
+python -m streamlit run app.py
+```
+
+Open the local URL shown in the terminal, usually `http://localhost:8501`.
+
+---
+
+## Dataset
+
+The project uses an employee attrition dataset in the style of the **IBM HR Analytics Employee Attrition** dataset (1,470 employee records).
+
+| Area | Columns used |
+|---|---|
+| Demographics | `Age`, `Gender`, `EducationField` |
+| Organization | `Department`, `JobRole` |
+| Compensation | `MonthlyIncome` |
+| Tenure & career | `YearsAtCompany`, `YearsSinceLastPromotion` |
+| Engagement | `JobSatisfaction`, `OverTime` |
+| Outcome | `Attrition` (`Yes` / `No`) |
+| Identification | `EmployeeNumber` |
+
+If a column is missing, the related KPI shows `N/A` and its chart is skipped instead of crashing the app.
+
+> If your dataset contains real or confidential employee information, do not publish it in a public repository. Use anonymized or synthetic data instead.
+
+---
+
+## Configuration
+
+Theme and client settings live in `Streamlit/.streamlit/config.toml`:
+
+```toml
+[theme]
+base = "dark"
+primaryColor = "#6366F1"
+backgroundColor = "#0d1017"
+secondaryBackgroundColor = "#11141d"
+textColor = "#e6e9f0"
+
+[client]
+showSidebarNavigation = false
+toolbarMode = "viewer"
+```
+
+- `showSidebarNavigation = false` hides Streamlit's automatic page list, because the app has its own sidebar navigation.
+- `toolbarMode = "viewer"` hides the Deploy button and the top-right menu for a cleaner demo.
+- Restart the app after changing this file. Configuration is read only at startup.
+
+---
+
+## Data Preparation
+
+Before any analysis, the app:
+
+- Trims whitespace from column names and text values
+- Normalizes `Attrition` values to `Yes` / `No`
+- Normalizes department and job-role text
+- Handles missing analytical columns gracefully
+- Handles empty selections with a clear message instead of an error
+
+---
+
+## SQL Analysis
+
+SQL / MySQL was used for exploratory analysis of the same HR dataset, including employee counts, attrition rates, department and job-role breakdowns and overtime analysis. The Streamlit application itself reads the dataset with pandas and presents the results through the interactive interface.
+
+---
+
+## Project Scope
+
+**Included**
+
+- Descriptive and diagnostic HR analytics
+- Workforce and attrition analysis
+- Employee-level search, filtering and CSV export
+- Interactive department filtering
+- Dynamic KPIs, insights and recommended actions
+
+**Not included**
+
+- Machine-learning attrition prediction
+- Individual employee risk scoring
+- Automated employee decisions
+
+---
+
+## Deployment
+
+The app can be deployed on [Streamlit Community Cloud](https://streamlit.io/cloud).
+
+1. Push the project to GitHub.
+2. Make sure `requirements.txt` is committed.
+3. Include the `data/` folder if you want the deployed app to load the dataset (see the note on confidential data above).
+4. Set the main file path to `Streamlit/app.py`.
+5. Deploy.
+
+---
+
+## Roadmap
+
+- [x] Data preparation and validation
+- [x] Workforce analytics
+- [x] Attrition analytics, including tenure and promotion
+- [x] Employee explorer with CSV export
+- [x] Dynamic insights and recommended actions
+- [x] UI polish and shared theme
+- [ ] GitHub repository setup
+- [ ] Deployment
+- [ ] Additional filters (job role, age band, tenure band)
+- [ ] PDF report export
+- [ ] Predictive attrition risk scoring
+- [ ] Authentication and role-based access
+
+---
+
+## Author
+
+**Paras Kamble**
+B.Tech Computer Engineering
+Loknete Shamrao Peje Government College of Engineering, Ratnagiri, Maharashtra
+
+Areas of interest: Data Analytics, Business Intelligence, Python, SQL, Data Visualization, Software Development
+
+---
+
+## License
+
+This project is intended for educational, portfolio and demonstration purposes. To use an open-source license, add a `LICENSE` file to the repository and update this section.
