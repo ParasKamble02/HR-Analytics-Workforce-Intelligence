@@ -55,19 +55,49 @@ The application transforms employee-level HR data into an interactive analytics 
 | ![Insights](screenshots/HR_WorkforceInsights.png) |
 
 ---
-##🎯 Project Objectives
-Analyze overall workforce composition
-Understand employee attrition and retention patterns
-Identify departments and job roles with higher attrition
-Analyze employee demographics
-Examine income and tenure relationships
-Analyze tenure and promotion patterns
-Investigate overtime and job satisfaction patterns
-Provide interactive employee-level exploration
-Generate dynamic workforce insights
-Support HR decision-making through data analytics
-Allow filtered employee data to be exported as CSV
+
+## 🎯 Project Objectives
+
+- Analyze overall workforce composition
+- Understand employee attrition and retention patterns
+- Identify departments and job roles with higher attrition
+- Analyze employee demographics
+- Examine income and tenure relationships
+- Analyze tenure and promotion patterns
+- Investigate overtime and job satisfaction patterns
+- Provide interactive employee-level exploration
+- Generate dynamic workforce insights
+- Support HR decision-making through data analytics
+- Allow filtered employee data to be exported as CSV
+
 ---
+
+## 📊 Analytics Workflow
+
+The application follows an end-to-end HR analytics workflow:
+
+```text
+HR Employee Dataset
+        ↓
+Data Loading
+        ↓
+Data Cleaning & Validation
+        ↓
+Interactive Filtering
+        ↓
+Workforce Analysis
+        ↓
+Attrition Analysis
+        ↓
+Employee Exploration
+        ↓
+Dynamic Insights
+        ↓
+Recommended Actions
+        ↓
+CSV Export
+```
+
 ## Features
 
 ### 📊 Dashboard
@@ -257,8 +287,6 @@ pandas
 plotly
 ```
 
-Use a recent Streamlit release. The app relies on newer APIs such as `st.html` and `width="stretch"`.
-
 ### 4. Add the dataset
 
 Place the dataset in the `data/` folder, one level above the `Streamlit` folder. The app loads the first `.csv` file it finds there.
@@ -378,32 +406,6 @@ The app can be deployed on [Streamlit Community Cloud](https://streamlit.io/clou
 - [x] UI polish and shared theme
 - [x] GitHub repository setup
 - [X] Deployment
-
----
-
-##📊 Analytics Workflow
-
-The application follows an end-to-end HR analytics workflow:
-
-HR Employee Dataset
-        ↓
-Data Loading
-        ↓
-Data Cleaning & Validation
-        ↓
-Interactive Filtering
-        ↓
-Workforce Analysis
-        ↓
-Attrition Analysis
-        ↓
-Employee Exploration
-        ↓
-Dynamic Insights
-        ↓
-Recommended Actions
-        ↓
-CSV Export
 
 ---
 
