@@ -197,7 +197,6 @@ The sidebar department filter (Research & Development, Human Resources, Sales) d
 |---|---|---|---|
 | 1,470 | 237 | 1,233 | 16.12% |
 
-> Insights and recommendations are analytical observations from the available data. Use them to guide HR investigation, not as proof of cause and effect.
 
 ---
 
@@ -411,7 +410,7 @@ The app can be deployed on [Streamlit Community Cloud](https://streamlit.io/clou
 
 1. Push the project to GitHub.
 2. Make sure `requirements.txt` is committed.
-3. Include the `data/` folder if you want the deployed app to load the dataset (see the note on confidential data above).
+3. Include the `data/` folder if you want the deployed app to load the dataset.
 4. Set the main file path to `Streamlit/app.py`.
 5. Deploy.
 
