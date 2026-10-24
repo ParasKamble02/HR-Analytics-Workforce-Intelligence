@@ -76,7 +76,7 @@ The application transforms employee-level HR data into an interactive analytics 
 
 ## 📊 Analytics Workflow
 
-The application follows an end-to-end HR analytics workflow:
+The Project follows an end-to-end HR analytics workflow:
 
 ```text
 HR Employee Dataset
@@ -225,6 +225,15 @@ HR-Analytics-Workforce-Intelligence/
 ├── screenshots/
 ├── data/
 │   └── HR-Employee-Attrition.csv
+├── excel/                        
+│   └── HR-Analytics.xlsx         # Excel analysis files
+├── sql/
+│   └── hr_analytics.sql          # MySQL analysis queries
+├── python/
+│   └── hr_analysis.ipynb         # Jupyter notebook: cleaning, EDA, statistics
+├── powerbi/
+│   ├── screenshots
+│   └── HR-Employee-Attrition.pbix  # Power BI dashboard
 └── Streamlit/
     ├── .streamlit/
     │   └── config.toml          # Theme and client settings
@@ -297,7 +306,7 @@ plotly
 
 ### 4. Add the dataset
 
-Place the HR-Employee-Attrition.xlsx dataset in the `data/` folder. The application loads the Excel dataset from this location.
+Place the HR dataset as a CSV file (for example `HR-Employee-Attrition.csv`) in the `data/` folder. The application loads the first `.csv` file it finds there.
 
 ### 5. Run the app
 
