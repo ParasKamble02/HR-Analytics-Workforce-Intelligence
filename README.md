@@ -1,7 +1,8 @@
 # 👥 HR Analytics & Workforce Intelligence
 
-> An interactive HR analytics dashboard for exploring workforce composition, employee attrition, tenure and promotion patterns, and data-driven HR insights. Filter by department and every KPI, chart, record and insight updates automatically.
+> An interactive HR analytics application for exploring & analyzing workforce composition, employee attrition, tenure and promotion patterns, and data-driven HR insights using Python, SQL and Streamlit. Filter by department and every KPI, chart, record and insight updates automatically.
 
+[🚀 Live Demo] [📊 GitHub] [📄 Dataset]
 
 ## Table of Contents
 
@@ -83,7 +84,11 @@ Data Loading
         ↓
 Data Cleaning & Validation
         ↓
-Interactive Filtering
+Exploratory Data Analysis
+        ↓
+SQL Analysis
+        ↓
+Statistical/KPI Analysis
         ↓
 Workforce Analysis
         ↓
@@ -91,12 +96,15 @@ Attrition Analysis
         ↓
 Employee Exploration
         ↓
+Interactive Filtering
+        ↓
 Dynamic Insights
         ↓
 Recommended Actions
         ↓
 CSV Export
 ```
+---
 
 ## Features
 
@@ -289,7 +297,7 @@ plotly
 
 ### 4. Add the dataset
 
-Place the dataset in the `data/` folder, one level above the `Streamlit` folder. The app loads the first `.csv` file it finds there.
+Place the HR-Employee-Attrition.xlsx dataset in the `data/` folder. The application loads the Excel dataset from this location.
 
 ### 5. Run the app
 
@@ -354,7 +362,22 @@ Before any analysis, the app:
 
 ## SQL Analysis
 
-SQL / MySQL was used for exploratory analysis of the same HR dataset, including employee counts, attrition rates, department and job-role breakdowns and overtime analysis. The Streamlit application itself reads the dataset with pandas and presents the results through the interactive interface.
+SQL / MySQL was used for exploratory analysis of the same HR dataset, including employee counts, attrition rates, department and job-role breakdowns and overtime analysis. The Streamlit application itself reads the dataset with pandas and presents the results through the interactive interface. 
+**SQL Analysis File:** [`hr_analytics.sql`](sql/hr_analytics.sql)
+
+---
+
+## Python Analysis
+
+Python was used in Jupyter Notebook for data cleaning, exploratory data analysis (EDA), statistical analysis, and visualization of the HR dataset. The analysis was used to identify workforce patterns and factors associated with employee attrition.
+**Python Analysis Notebook:** [`hr_analysis.ipynb`](python/hr_analysis.ipynb)
+
+---
+
+## Power BI Dashboard
+
+Power BI was used to build an interactive HR Analytics dashboard for workforce and attrition analysis. The dashboard provides KPI-driven insights into employee demographics, departments, job roles, compensation, tenure, job satisfaction, overtime, and attrition patterns.
+**Power BI Dashboard:** [`HR-Employee-Attrition.pbix`](powerbi/HR-Employee-Attrition.pbix)
 
 ---
 
@@ -369,7 +392,7 @@ SQL / MySQL was used for exploratory analysis of the same HR dataset, including 
 - Dynamic KPIs, insights and recommended actions
 
 **Future Enhancement**
-Potential future improvements include:
+
 - Machine-learning attrition prediction
 - Predictive attrition risk scoring
 - Advanced employee segmentation
@@ -412,7 +435,7 @@ The app can be deployed on [Streamlit Community Cloud](https://streamlit.io/clou
 ## Author
 
 **Paras Kamble**
-B.Tech AI & DS
+B.Tech — Artificial Intelligence & Data Science
 Loknete Shamrao Peje Government College of Engineering, Ratnagiri, Maharashtra
 
 Areas of interest: Data Analytics, Data Science, Python, SQL, Data Visualization, Machine Learning
