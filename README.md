@@ -1,15 +1,7 @@
 # 👥 HR Analytics & Workforce Intelligence
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?logo=streamlit&logoColor=white)
-![Pandas](https://img.shields.io/badge/pandas-Data%20Analysis-150458?logo=pandas&logoColor=white)
-![Plotly](https://img.shields.io/badge/Plotly-Charts-3F4F75?logo=plotly&logoColor=white)
-
 > An interactive HR analytics dashboard for exploring workforce composition, employee attrition, tenure and promotion patterns, and data-driven HR insights. Filter by department and every KPI, chart, record and insight updates automatically.
 
-![Dashboard](screenshots/dashboard.png)
-
----
 
 ## Table of Contents
 
@@ -34,9 +26,8 @@
 
 ## Overview
 
-**HR Analytics & Workforce Intelligence** turns employee-level HR data into an interactive analytics application. HR users can monitor workforce KPIs, compare departments and job roles, investigate why employees leave, search individual records and export the results.
-
-The project focuses on **descriptive and diagnostic HR analytics**. It does not use machine learning or make predictions about individual employees.
+**HR Analytics & Workforce Intelligence** is an interactive data analytics web application built using Python, Pandas, Plotly, SQL/MySQL, and Streamlit. 
+The application transforms employee-level HR data into an interactive analytics platform where users can explore workforce demographics, analyze employee attrition, investigate workforce patterns, filter employee records, and generate data-driven HR insights. The project focuses on descriptive and diagnostic HR analytics.
 
 **Questions the app helps answer**
 
@@ -53,15 +44,15 @@ The project focuses on **descriptive and diagnostic HR analytics**. It does not 
 
 | Dashboard | Workforce |
 |---|---|
-| ![Dashboard](screenshots/dashboard.png) | ![Workforce](screenshots/workforce.png) |
+| ![Dashboard](screenshots/HR_Dashboard.png) | ![Workforce](screenshots/HR_WorkforceOverview.png) |
 
 | Attrition | Employees |
 |---|---|
-| ![Attrition](screenshots/attrition.png) | ![Employees](screenshots/employees.png) |
+| ![Attrition](screenshots/HR_AttritionIntelligence.png) | ![Employees](screenshots/HR_EmployeeDirectory.png) |
 
 | Insights |
 |---|
-| ![Insights](screenshots/insights.png) |
+| ![Insights](screenshots/HR_WorkforceInsights.png) |
 
 ---
 
