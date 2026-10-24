@@ -223,7 +223,7 @@ HR-Analytics-Workforce-Intelligence/
 ├── .gitignore
 ├── screenshots/
 ├── data/
-│   └── HR-Employee-Attrition.xlsx
+│   └── HR-Employee-Attrition.csv
 └── Streamlit/
     ├── .streamlit/
     │   └── config.toml          # Theme and client settings
