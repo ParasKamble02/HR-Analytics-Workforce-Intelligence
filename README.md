@@ -2,7 +2,8 @@
 
 > An interactive HR analytics application for exploring & analyzing workforce composition, employee attrition, tenure and promotion patterns, and data-driven HR insights using Python, SQL and Streamlit. Filter by department and every KPI, chart, record and insight updates automatically.
 
-[🚀 Live Demo] [📊 GitHub] [📄 Dataset]
+[🚀 Live Demo](https://hr-analytics-workforce-intelligence-uhhva7wamfe5kcnfpcp7wa.streamlit.app/) · [📊 GitHub Repository](https://github.com/ParasKamble02/HR-Analytics-Workforce-Intelligence)
+
 
 ## Table of Contents
 
