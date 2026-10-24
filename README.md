@@ -55,7 +55,19 @@ The application transforms employee-level HR data into an interactive analytics 
 | ![Insights](screenshots/HR_WorkforceInsights.png) |
 
 ---
-
+##🎯 Project Objectives
+Analyze overall workforce composition
+Understand employee attrition and retention patterns
+Identify departments and job roles with higher attrition
+Analyze employee demographics
+Examine income and tenure relationships
+Analyze tenure and promotion patterns
+Investigate overtime and job satisfaction patterns
+Provide interactive employee-level exploration
+Generate dynamic workforce insights
+Support HR decision-making through data analytics
+Allow filtered employee data to be exported as CSV
+---
 ## Features
 
 ### 📊 Dashboard
@@ -174,7 +186,7 @@ HR-Analytics-Workforce-Intelligence/
 ├── .gitignore
 ├── screenshots/
 ├── data/
-│   └── HR-Employee-Attrition.csv
+│   └── HR-Employee-Attrition.xlsx
 └── Streamlit/
     ├── .streamlit/
     │   └── config.toml          # Theme and client settings
@@ -207,7 +219,7 @@ HR-Analytics-Workforce-Intelligence/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/HR-Analytics-Workforce-Intelligence.git
+git clone https://github.com/ParasKamble02/HR-Analytics-Workforce-Intelligence.git
 cd HR-Analytics-Workforce-Intelligence
 ```
 
@@ -278,8 +290,6 @@ The project uses an employee attrition dataset in the style of the **IBM HR Anal
 | Identification | `EmployeeNumber` |
 
 If a column is missing, the related KPI shows `N/A` and its chart is skipped instead of crashing the app.
-
-> If your dataset contains real or confidential employee information, do not publish it in a public repository. Use anonymized or synthetic data instead.
 
 ---
 
@@ -368,6 +378,32 @@ The app can be deployed on [Streamlit Community Cloud](https://streamlit.io/clou
 - [x] UI polish and shared theme
 - [x] GitHub repository setup
 - [X] Deployment
+
+---
+
+##📊 Analytics Workflow
+
+The application follows an end-to-end HR analytics workflow:
+
+HR Employee Dataset
+        ↓
+Data Loading
+        ↓
+Data Cleaning & Validation
+        ↓
+Interactive Filtering
+        ↓
+Workforce Analysis
+        ↓
+Attrition Analysis
+        ↓
+Employee Exploration
+        ↓
+Dynamic Insights
+        ↓
+Recommended Actions
+        ↓
+CSV Export
 
 ---
 
