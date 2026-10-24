@@ -330,11 +330,17 @@ SQL / MySQL was used for exploratory analysis of the same HR dataset, including 
 - Interactive department filtering
 - Dynamic KPIs, insights and recommended actions
 
-**Not included**
-
+**Future Enhancement**
+Potential future improvements include:
 - Machine-learning attrition prediction
-- Individual employee risk scoring
-- Automated employee decisions
+- Predictive attrition risk scoring
+- Advanced employee segmentation
+- Additional filters for job role, age, and tenure
+- Automated HR reports
+- PDF report generation
+- Advanced workforce trend analysis
+- Scheduled report generation
+- Authentication
 
 ---
 
@@ -357,26 +363,24 @@ The app can be deployed on [Streamlit Community Cloud](https://streamlit.io/clou
 - [x] Attrition analytics, including tenure and promotion
 - [x] Employee explorer with CSV export
 - [x] Dynamic insights and recommended actions
+- [x] Additional filters (job role, age band, tenure band)
+- [x] PDF report export
 - [x] UI polish and shared theme
-- [ ] GitHub repository setup
-- [ ] Deployment
-- [ ] Additional filters (job role, age band, tenure band)
-- [ ] PDF report export
-- [ ] Predictive attrition risk scoring
-- [ ] Authentication and role-based access
+- [x] GitHub repository setup
+- [X] Deployment
 
 ---
 
 ## Author
 
 **Paras Kamble**
-B.Tech Computer Engineering
+B.Tech AI & DS
 Loknete Shamrao Peje Government College of Engineering, Ratnagiri, Maharashtra
 
-Areas of interest: Data Analytics, Business Intelligence, Python, SQL, Data Visualization, Software Development
+Areas of interest: Data Analytics, Data Science, Python, SQL, Data Visualization, Machine Learning
 
 ---
 
 ## License
 
-This project is intended for educational, portfolio and demonstration purposes. To use an open-source license, add a `LICENSE` file to the repository and update this section.
+This project is intended for educational, portfolio and demonstration purposes.
