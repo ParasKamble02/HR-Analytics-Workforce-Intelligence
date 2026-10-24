@@ -200,8 +200,6 @@ HR-Analytics-Workforce-Intelligence/
     └── requirements.txt
 ```
 
-`__pycache__` folders are generated automatically and should be excluded with `.gitignore`.
-
 ---
 
 ## Getting Started
@@ -301,10 +299,6 @@ textColor = "#e6e9f0"
 showSidebarNavigation = false
 toolbarMode = "viewer"
 ```
-
-- `showSidebarNavigation = false` hides Streamlit's automatic page list, because the app has its own sidebar navigation.
-- `toolbarMode = "viewer"` hides the Deploy button and the top-right menu for a cleaner demo.
-- Restart the app after changing this file. Configuration is read only at startup.
 
 ---
 
